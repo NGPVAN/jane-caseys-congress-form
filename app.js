@@ -1,3 +1,8 @@
+require('nodebootstrap-server').setup(function(runningApp) {
+
+
+    runningApp.use('/forms', require('./lib/forms/controllers/forms'));
+
 /**
  * This is a self-contained module that defines its routes,
  * callbacks, models and views all internally.
@@ -18,6 +23,9 @@ exports.callbacks    = require('./lib/forms/controllers/forms');
 
 app.set('view engine', 'jade');
 
+/** Global ROUTES **/
+app.get('/globalform', exports.callbacks.goJane);
+
 // Module's Routes.
 app.get('/', exports.callbacks.goJane);
 app.post('/solveReCaptcha', exports.callbacks.solveRecaptcha);
@@ -34,3 +42,4 @@ app.get('/:bioId', exports.callbacks.getCongressForm);
 app.post('/submitFormData', exports.callbacks.submitFormData);
 app.post('/submitFormDataAlert', exports.callbacks.submitFormDataAlert);
 
+});
