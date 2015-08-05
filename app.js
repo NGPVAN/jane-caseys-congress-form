@@ -1,11 +1,11 @@
 /**
-* This is a self-contained module that defines its routes,
-* callbacks, models and views all internally.
-* Such approach to code organization follows the recommendations of TJ:
-*
-* http://vimeo.com/56166857
-* 
-*/
+ * This is a self-contained module that defines its routes,
+ * callbacks, models and views all internally.
+ * Such approach to code organization follows the recommendations of TJ:
+ *
+ * http://vimeo.com/56166857
+ *
+ */
 
 // Third-party libraries
 var express = require('express'),
@@ -14,19 +14,11 @@ var express = require('express'),
 
 // Don't just use,
 // but also export in case another module needs to use these as well.
-exports.callbacks    = require('./controllers/forms');
-// exports.models       = require('./models');
+exports.callbacks    = require('./lib/forms/controllers/forms');
 
-//-- For increased module encapsulation,
-// you could also serve templates with module-local
-//-- paths, but using shared layouts and partials may become tricky
-//var hbs = require('hbs');
-// app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
-//app.engine('handlebars', hbs.__express);
 
-// Module's Routes. Please note this is actually under /forms,
-// because module is attached under /forms
+// Module's Routes.
 app.get('/', exports.callbacks.goJane);
 app.post('/solveReCaptcha', exports.callbacks.solveRecaptcha);
 app.post('/solveNewReCaptcha', exports.callbacks.solveNewRecaptcha);
