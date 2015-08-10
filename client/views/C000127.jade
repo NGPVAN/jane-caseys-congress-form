@@ -1,0 +1,41 @@
+extends layout
+block content
+
+  form(method='POST', action='/submitFormData', role="form")
+    .row
+      input(type='text' id='bioid' name='bioid' value='#{bioId}')
+      br
+      select(name="topic", required)#topic
+        option(value='') Select One
+        option(value='AGR.GEN') Agriculture
+        option(value='BOR.SEC') Border Security
+        option(value='BGT.GEN') Budget
+        option(value='CIVLIB') Civil Liberties
+        option(value='DEF') Defense
+        option(value='JOBS') Economy and Jobs
+        option(value='ED') Education
+        option(value='ENE.GEN') Energy
+        option(value='ENV.GEN') Environment
+        option(value='FEMA') First Responders
+        option(value='FOR.GEN') Foreign Affairs
+        option(value='GUN CONTROL') Gun Violence
+        option(value='HLT.GEN') Health Care
+        option(value='HOU.GEN') Housing
+        option(value='IMM.GEN') Immigration
+        option(value='INDIAN') Indian Affairs
+        option(value='LAW.ENFORCE') Law Enforcement
+        option(value='KM1') Miscellaneous
+        option(value='NAT.SEC') National Security
+        option(value='SS.GEN') Seniors and Social Security
+        option(value='SM BUS') Small Business
+        option(value='TAX.GEN') Taxes
+        option(value='TECH') Technology
+        option(value='TRN.GEN') Transportation
+        option(value='VET.GEN') Veterans
+      br
+      input(type='text', id='firstname', name='firstname', class='form-control', placeholder='Enter First Name', required)
+      input(type='text', id='subject', name='subject', class='form-control', placeholder='Enter Subject', required)
+      input(type='text', id='message', name='message', class='form-control', placeholder='Enter Message', required)
+      input(type='text', id='email', name='email', class='form-control', placeholder='Email', required)
+      br
+      input(type='submit', id='submit', name='submit', value='Submit', class='btn btn-default')

@@ -1,0 +1,214 @@
+extends layout
+
+block content
+
+  form(method='POST', action='/submitFormData', class='form-inline', role='form')
+    .form-group
+      input(type='text' id='bioid' name='bioid' value='#{bioId}')
+      h4 Topic
+      select(name="topic", required)#topic
+        option(value='') Select One	  
+        option Addiction Services
+        option Agriculture
+        option Arts and History
+        option Banking
+        option Birth/Death Certificates
+        option Business
+        option Children and Families
+        option Child Support
+        option Civil Service Commission
+        option Consumer Affairs
+        option Corrections
+        option Developmental Disabilities
+        option Division on Elections
+        option Education
+        option Environment
+        option Family Care/Medicaid
+        option Health
+        option Housing
+        option Human Services
+        option Insurance
+        option Invitations/Scheduling
+        option Labor
+        option Law and Public Safety
+        option Licensing Boards
+        option Lottery
+        option Mental Health Services
+        option Military and Veterans Affairs
+        option Pensions and Retirements
+        option Public Utilities
+        option Requesting Proclamations / Special Letter
+        option Superstorm Sandy/CDBG
+        option Taxation
+        option Temporary Disability
+        option Transportation / Motor Vehicles
+        option Unclaimed Property
+        option Unemployment
+      h4 Prefix
+      select(name="prefix", required)#prefix
+        option(value='') Select One
+        option Captain
+        option Chief
+        option Councilman
+        option Councilwoman
+        option Dame
+        option Doctor
+        option Dr.
+        option Dr. and Mr.
+        option Dr. and Mrs.
+        option Father
+        option Friend
+        option Friends
+        option Miss
+        option Monsignor
+        option Mr.
+        option Mr. and Mrs.
+        option Mrs.
+        option Ms.
+        option Pastor
+        option Rabbi
+        option Rev.
+        option Reverend
+        option Sir
+        option Sister
+        option The Honorable
+      br
+      br
+      input(type='text', id='firstname', name='firstname', class='form-control', placeholder='Enter First Name', required)
+      input(type='text', id='lastname', name='lastname', class='form-control', placeholder='Enter Last Name', required)
+      input(type='text', id='streetaddress1', name='streetaddress1', class='form-control', placeholder='Address 1', required)
+      input(type='text', id='streetaddress2', name='streetaddress2', class='form-control', placeholder='Address 2')
+      input(type='text', id='city', name='city', class='form-control', placeholder='City', required)
+      select(name="state")#state
+        option(value='') Select One
+        option NJ
+        option DE
+        option NY
+        option PA
+        option AL
+        option AK
+        option AZ
+        option AR
+        option CA
+        option CO
+        option CT
+        option DC
+        option DE
+        option FL
+        option GA
+        option HI
+        option ID
+        option IL
+        option IN
+        option IA
+        option KS
+        option KY
+        option LA
+        option ME
+        option MD
+        option MA
+        option MI
+        option MN
+        option MO
+        option MS
+        option MT
+        option NE
+        option NV
+        option NH
+        option NM
+        option NY
+        option NC
+        option ND
+        option OH
+        option OK
+        option OR
+        option PA
+        option RI
+        option SC
+        option SD
+        option TN
+        option TX
+        option UT
+        option VT
+        option VA
+        option WA
+        option WV
+        option WI
+        option WY
+        option AS
+        option FM
+        option GU
+        option MH
+        option MP
+        option PR
+        option VI
+      br
+      input(type='text', id='zipcode', name='zipcode', class='form-control', placeholder='Enter Zip', required)
+      input(type='text', id='phonenumber', name='phonenumber', class='form-control', placeholder='Enter Phone', required)
+      input(type='text', id='subject', name='subject', class='form-control', placeholder='Enter Subject', required)
+      input(type='text', id='message', name='message', class='form-control', value='Default Message', required)
+      h4 Subtopic
+      select(name="subtopic", required)#subtopic
+        option(value='') Select One
+        option --Abuse
+        option --Active Services
+        option --Adoption/Foster Care
+        option --Affordable Housing
+        option --Alcoholic Beverage Control
+        option --Animal Health
+        option --Assistance/LIHEAP
+        option --Auto Insurance
+        option --Building Inspections/Violations
+        option --Business
+        option --Casino Control
+        option --Childcare Centers
+        option --Civil Rights
+        option --Clean Energy
+        option --Correctional Facilities
+        option --Division on Women
+        option --Domestic Violence
+        option --EZ Pass
+        option --Family Health/Nutrition
+        option --Farmland Preservation
+        option --Financial Aid
+        option --Fish and Wildlife
+        option --Flooding
+        option --Health Insurance
+        option --Homeland Security
+        option --Homeowners Insurance
+        option --Homestead Rebate
+        option --Hospital Issues
+        option --Inheritance Tax
+        option --Jersey Fresh
+        option --K-12
+        option --Lifeline
+        option --Miscellaneous Public Safety
+        option --Motor Vehicle Commission
+        option --N.J. Colleges and Universities
+        option --National Guard and Reserves
+        option --NJ Transit
+        option --Nursing Homes
+        option --Open Space
+        option --Other Education Issues
+        option --PAAD/Senior Gold
+        option --Pardons and Clemency
+        option --Parks and Forests
+        option --Parkway Authorities
+        option --Parole Board
+        option --Pollution and Contamination
+        option --Property Tax
+        option --PTR (Senior Freeze)
+        option --Residence
+        option --Roadway Construction
+        option --Sales Tax
+        option --Senior Programs
+        option --Shutoffs
+        option --Special Education
+        option --State Highways and Routes
+        option --State Income Tax
+        option --Teacher Certification
+        option --Telephone/Water, Gas and Electric Rates
+        option --Veterans Affairs
+        option --Welfare/Food Stamps	
+      br
+      input(type='submit', id='submit', name='submit', value='Submit', class='btn btn-default')

@@ -1,0 +1,64 @@
+extends layout
+block content
+
+  form(method='POST', action='/submitFormData', role="form")
+    .row
+      h3 Prefix
+      select(name="prefix", required)#prefix
+        option Select One
+        option Mr.
+        option Mrs.
+        option Ms.
+        option Miss
+      br
+      br
+      input(type='text' id='bioid' name='bioid' value='#{bioId}')
+      input(type='text', id='lastname', name='lastname', class='form-control', placeholder='Enter Last Name', required)
+      br
+      select(name="topic", required)#topic
+        option(value='') Select One
+        option(value='ABOR') Abortion and Family Planning
+        option(value='AG') Agriculture
+        option(value='ENV.ANIMALS') Animals
+        option(value='ART') Arts and Entertainment
+        option(value='BANK') Banking and Finance
+        option(value='BUD') Budget and Economy
+        option(value='BUS') Business and Industry
+        option(value='JUD.CHILDREN') Children and Families
+        option(value='JUD.CIVIL') Civil Rights
+        option(value='CPSC') Consumer Affairs
+        option(value='DEF') Defense and Military
+        option(value='ED') Education
+        option(value='EN') Energy
+        option(value='ENV') Environment
+        option(value='CASE') Federal Agency Problems
+        option(value='GOV.FEDS') Federal Employees
+        option(value='FOR') Foreign Relations
+        option(value='CASE') Grant Requests
+        option(value='GUN CONTROL') Gun Control
+        option(value='HEA') Health
+        option(value='MCARE') Health - Medicare
+        option(value='TERROR') Homeland Security
+        option(value='HUD') Housing and Real Estate
+        option(value='FOR.HUMAN RIGHTS') Human Rights
+        option(value='IMM') Immigration
+        option(value='JUD') "Judiciary, Justice and Crime"
+        option(value='LAB') "Labor, Retirement and Pensions"
+        option(value='CASE') Local Community Issues
+        option(value='POST') Postal Issues
+        option(value='JUD.RELIGION') Religion
+        option(value='SCI') "Science, Technology and Space"
+        option(value='SNR') Seniors
+        option(value='SSA') Social Security
+        option(value='TAX') Taxes
+        option(value='COMM') "Telecommunications, Phone, Cable, TV, Etc."
+        option(value='TRAN') Transportation
+        option(value='FOR.TRADE') Trade
+        option(value='VET') Veterans
+        option(value='MISC') Miscellaneous
+      br
+      input(type='text', id='subject', name='subject', class='form-control', placeholder='Enter Subject', required)
+      input(type='text', id='message', name='message', class='form-control', placeholder='Enter Message', required)
+      input(type='text', id='email', name='email', class='form-control', placeholder='Email', required)
+      br
+      input(type='submit', id='submit', name='submit', value='Submit', class='btn btn-default')

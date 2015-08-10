@@ -1,0 +1,34 @@
+extends layout
+block content
+  form(method='POST', action='/solveRecaptcha', role="form")
+    .row
+      input(type='text' id='bioid' name='bioid' value='#{bioId}')
+      br
+      | Prefix
+      select(name="prefix", required)#prefix
+        option Select One
+        option Mr.
+        option Mrs.
+        option Ms.
+      div(id='firstName')
+        input(type='text', class='form-control', required)
+      input(type='text', class='form-control', placeholder='Enter Middle Name')
+      input(type='text', id='lastname', name='lastname', class='form-control', placeholder='Enter Last Name', required)
+      br
+      | Topic
+      select(name="topic", required)#topic
+        option(value='') Select One
+        option(value='AFGHANISTAN') Afghanistan
+        option(value='AG') Agriculture
+        option(value='ANIMAL') Animals
+      input(type='text', class='form-control subject', placeholder='Enter Subject', required)
+      input(type='text', id='message', name='message', class='form-control', placeholder='Enter Message', required)
+      br
+      | Would you like a response
+      input(type='checkbox', value='Yes')
+      | Yes
+      input(type='checkbox', value='No')
+      | No
+      input(type='text', id='email', name='email', class='form-control', placeholder='Email', required)
+      br
+      input(type='submit', name='submitcaptcha', value='Check Recaptcha', class='btn btn-default')

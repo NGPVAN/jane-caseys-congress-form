@@ -1,45 +1,60 @@
-require('nodebootstrap-server').setup(function(runningApp) {
+var express = require('express');
+var path = require('path');
+var favicon = require('serve-favicon');
+var logger = require('morgan');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
 
+var routes = require('./server/routes/index');
 
-    runningApp.use('/forms', require('./lib/forms/controllers/forms'));
+var app = express();
 
-/**
- * This is a self-contained module that defines its routes,
- * callbacks, models and views all internally.
- * Such approach to code organization follows the recommendations of TJ:
- *
- * http://vimeo.com/56166857
- *
- */
+var VIEWS_DIR = '../client/views/';
 
-// Third-party libraries
-var express = require('express'),
-    exports = module.exports = express(),
-    app = exports;
-
-// Don't just use,
-// but also export in case another module needs to use these as well.
-exports.callbacks    = require('./lib/forms/controllers/forms');
-
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
-/** Global ROUTES **/
-app.get('/globalform', exports.callbacks.goJane);
+// uncomment after placing your favicon in /public
+//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, './client', 'public')));
 
-// Module's Routes.
-app.get('/', exports.callbacks.goJane);
-app.post('/solveReCaptcha', exports.callbacks.solveRecaptcha);
-app.post('/solveNewReCaptcha', exports.callbacks.solveNewRecaptcha);
-app.get('/success', exports.callbacks.success);
-app.get('/failed', exports.callbacks.failed);
-app.post('/twoStepTest', exports.callbacks.twoStepTest);
-app.get('/twoStepTwo', exports.callbacks.twoStepTwo);
-app.post('/twoStepSubmit', exports.callbacks.twoStepSubmit);
-app.get('/postData', exports.callbacks.postData);
-app.post('/postData', exports.callbacks.deletePostData);
-app.get('/images', exports.callbacks.renderImage);
-app.get('/:bioId', exports.callbacks.getCongressForm);
-app.post('/submitFormData', exports.callbacks.submitFormData);
-app.post('/submitFormDataAlert', exports.callbacks.submitFormDataAlert);
+app.use('/', routes);
 
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  var err = new Error('Not Found');
+  err.status = 404;
+  next(err);
 });
+
+// error handlers
+
+//// development error handler
+//// will print stacktrace
+//if (app.get('env') === 'development') {
+//  app.use(function(err, req, res, next) {
+//    res.status(err.status || 500);
+//    res.render(VIEWS_DIR + 'failed', {
+//      message: err.message,
+//      error: err
+//    });
+//  });
+//}
+//
+//// production error handler
+//// no stacktraces leaked to user
+//app.use(function(err, req, res, next) {
+//  res.status(err.status || 500);
+//  res.render(VIEWS_DIR + 'failed', {
+//    message: err.message,
+//    error: {}
+//  });
+//});
+
+
+module.exports = app;
