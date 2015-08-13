@@ -13,5 +13,18 @@
     "jade": "~1.11.0",
     "morgan": "~1.6.1",
     "pg": "^4.4.1"
-  }
+  },
+  "description": "jane-caseys-congress-form\r =========================",
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/NGPVAN/jane-caseys-congress-form.git"
+  },
+  "author": "",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/NGPVAN/jane-caseys-congress-form/issues"
+  },
+  "homepage": "https://github.com/NGPVAN/jane-caseys-congress-form"
 }
