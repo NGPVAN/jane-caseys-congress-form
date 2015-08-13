@@ -4,17 +4,17 @@ var config = require(path.join(__dirname, '../', 'config'));
 
 
 module.exports = function(req, res) {
-  var data = "";
+  var data = '';
 
   // Get a Postgres client from the connection pool
   pg.connect(config.connectionString, function(err, client) {
 
     // SQL Query > Insert Data
-    var query = client.query("SELECT * FROM submissions ORDER BY timestamp ASC;");
+    var query = client.query('SELECT * FROM submissions ORDER BY timestamp ASC;');
 
     // Stream results back one row at a time
     query.on('row', function(row) {
-      data += row.payload + "\n";
+      data += row.payload + '\n';
     });
 
     // After all data is returned, close connection and return results
@@ -22,7 +22,7 @@ module.exports = function(req, res) {
       client.end();
 
       if(data.length === 0) {
-        data = "No data";
+        data = 'No data';
       }
 
       res.render(config.VIEWS_DIR + 'postData', {postData: data});

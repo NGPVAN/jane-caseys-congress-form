@@ -5,9 +5,11 @@
   "lastsemic" : true,
   "immed"     : true,
   "indent"    : 2,
+  "laxbreak"  : true,
   "latedef"   : "nofunc",
   "newcap"    : true,
-  "trailing"  : true,
   "freeze"    : true,
+  "quotmark"  : "single",
+  "maxlen"    : 120,
   "boss"      : true
 }
