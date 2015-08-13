@@ -7,7 +7,7 @@ module.exports = function(req, res) {
   var data = "";
 
   // Get a Postgres client from the connection pool
-  pg.connect(config.connectionString, function(err, client, done) {
+  pg.connect(config.connectionString, function(err, client) {
 
     // SQL Query > Insert Data
     var query = client.query("SELECT * FROM submissions ORDER BY timestamp ASC;");
@@ -21,7 +21,7 @@ module.exports = function(req, res) {
     query.on('end', function() {
       client.end();
 
-      if(data.length == 0) {
+      if(data.length === 0) {
         data = "No data";
       }
 

@@ -32,7 +32,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, './client', 'public')));
 
-app.get('/', function(req, res, next) {
+app.get('/', function(req, res) {
   res.render(VIEWS_DIR + 'home');
 });
 
@@ -59,7 +59,7 @@ app.use(function(req, res, next) {
 
 // error handlers
 // will print stacktrace
-app.use(function(err, req, res, next) {
+app.use(function(err, req, res) {
   res.status(err.status || 500);
   res.render(VIEWS_DIR + 'failed', {
     message: err.message,
