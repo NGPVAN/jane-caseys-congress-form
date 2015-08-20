@@ -3,6 +3,7 @@ var path = require('path');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var favicon = require('serve-favicon');
 
 var success = require('./middleware/success');
 var failed = require('./middleware/failed');
@@ -19,7 +20,7 @@ var solveNewRecaptcha = require('./middleware/solveNewRecaptcha');
 
 var app = express();
 
-var VIEWS_DIR = '../client/views/';
+var VIEWS_DIR = '../public/views/';
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -29,7 +30,8 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, './client', 'public')));
+app.use(favicon(__dirname + '/public/images/favicon.ico'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function(req, res) {
   res.render(VIEWS_DIR + 'home');
