@@ -1,0 +1,20 @@
+extends layout
+block content
+
+    form(method='POST', action=action||'/postData', role="form")
+        input(type='submit', id='submit', name='submit',
+        value='Clear Post Data', class='btn btn-default')
+
+
+    textarea(cols=200, rows='auto', id='data')
+      | #{postData}
+
+    br
+    a(href='/') Home
+
+    script(src="//code.jquery.com/jquery-1.11.0.min.js")
+    script(type='text/javascript').
+      $(function() {
+         $('textarea').height($('textarea').prop('scrollHeight'));
+      });
+
