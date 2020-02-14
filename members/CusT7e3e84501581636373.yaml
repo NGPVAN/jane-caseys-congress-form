@@ -1,0 +1,42 @@
+bioguide: CusT7e3e84501581636373
+contact_form:
+  method: post
+  usePhantomJsLogging: true
+  steps:
+    - visit: "https://forms-dev19.azurewebsites.net/7mGK2ULkf02BtsuJ3WQpTQ2"
+    - find:
+        - selector: textarea[name=Message0]
+    - fill_in:
+        - name: message
+          selector: textarea[name=Message0]
+          value: $MESSAGE
+          required: true
+        - name: First Name
+          selector: input[name=FirstName]
+          value: $NAME_FIRST
+          required: true
+        - name: Last Name
+          selector: input[name=LastName]
+          value: $NAME_LAST
+          required: true
+        - name: Street Address
+          selector: input[name=AddressLine1]
+          value: $ADDRESS_STREET
+          required: true
+        - name: zip5
+          selector: input[name=PostalCode]
+          value: $ADDRESS_ZIP5
+          required: true
+        - name: email
+          selector: input[name=EmailAddress]
+          value: $EMAIL
+          required: true
+    - click_on:
+        - selector: input[type=submit]
+    - find:
+        - selector: div .thankYou
+  success:
+    headers:
+      status: 200
+    body:
+      contains: "Thanks for taking"
