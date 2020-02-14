@@ -17,6 +17,10 @@ contact_form:
           - Ms.: Ms.
           - Miss: Miss
     - fill_in:
+      - name: bioid
+        selector: #bioid
+        value: "JANE_CASEY_SLOW_01"
+        required: true
       - name: lastname
         selector: "#lastname"
         value: $NAME_LAST
