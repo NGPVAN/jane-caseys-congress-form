@@ -5,7 +5,7 @@ contact_form:
   steps:
     - visit: "http://ngpvan-contact-jane-casey.herokuapp.com/forms/JANE_CASEY_Custom_01"
     - wait:
-      - value: 15
+      - value: 5
     - select:
       - name: prefix
         selector: "#prefix"
