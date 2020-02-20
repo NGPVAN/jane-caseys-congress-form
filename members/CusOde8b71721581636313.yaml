@@ -5,12 +5,8 @@ contact_form:
   steps:
     - visit: "https://forms-dev19.azurewebsites.net/LuNmEXQXrEShYE5bBvfrwQ2"
     - find:
-        - selector: textarea[name=Message0]
+        - selector: input[name=FirstName]
     - fill_in:
-        - name: message
-          selector: textarea[name=Message0]
-          value: $MESSAGE
-          required: true
         - name: First Name
           selector: input[name=FirstName]
           value: $NAME_FIRST
@@ -22,6 +18,10 @@ contact_form:
         - name: email
           selector: input[name=EmailAddress]
           value: $EMAIL
+          required: true
+        - name: message
+          selector: textarea[name=Message0]
+          value: $MESSAGE
           required: true
     - click_on:
         - selector: input[type=submit]
