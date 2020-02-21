@@ -3,7 +3,7 @@ contact_form:
   method: post
   usePhantomJsLogging: true
   steps:
-    - visit: "https://forms-dev19.azurewebsites.net/7mGK2ULkf02BtsuJ3WQpTQ2"
+    - visit: "https://forms-dev19.azurewebsites.net/cd7nKp_kYkKTBHfIOaWZOA2"
     - find:
         - selector: textarea[name=Message0]
     - fill_in:
