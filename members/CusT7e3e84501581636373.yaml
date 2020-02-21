@@ -5,10 +5,10 @@ contact_form:
   steps:
     - visit: "https://forms-dev19.azurewebsites.net/cd7nKp_kYkKTBHfIOaWZOA2"
     - find:
-        - selector: textarea[name=Message0]
+        - selector: textarea
     - fill_in:
         - name: message
-          selector: textarea[name=Message0]
+          selector: textarea
           value: $MESSAGE
           required: true
         - name: First Name
