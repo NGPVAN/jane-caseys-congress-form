@@ -20,6 +20,21 @@ Setup
   - `RECAPTCHA_V2_PUBLIC_KEY` & `RECAPTCHA_V2_PRIVATE_KEY`: For ReCaptcha V2
 6. To run app, run `npm start` or `node app.js`
 
+Misc Test Endpoints
+-------------------
+
+### GET/POST `/test`, `/test/:status`
+Returns simple content with the specified status code and delay.
+
+**Query Strings**
+- `delay`: 0 to 300, in seconds
+- `msg`: Content to display on the page in the "Message" location
+
+### GET `/testyaml/:yamlId`, `/testyaml/:status/:yamlId`, `/testYaml/:status/:delay/:yamlId`
+Returns the YAML content with specified status code and delay. 
+If yaml doesn't exist, will respond with `Not Found` content.
+
+
 Notes on Adding Forms
 ---------------------
 
