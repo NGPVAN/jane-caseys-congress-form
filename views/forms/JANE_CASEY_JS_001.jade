@@ -1,0 +1,8 @@
+extends layout
+block content
+
+  div#container
+    span="This requires Javascript to load dynamically"
+
+  script(type="text/javascript").
+    loadContentWithJs('JANE_CASEY_JS_001', '#container')
