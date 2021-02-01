@@ -1,7 +1,7 @@
 bioguide: JANE_CASEY_JS_01
 contact_form:
   method: post
-  usechrome: true
+  driver: auto
   steps:
     - visit: "http://ngpvan-contact-jane-casey.herokuapp.com/forms/JANE_CASEY_JS_01"
     - find:
@@ -33,6 +33,9 @@ contact_form:
         selector: "#email"
         value: $EMAIL
         required: true
+      - name: driver
+        selector: "#driver"
+        value: $YAMLTRON_DRIVER
     - click_on:
       - value: Submit
         selector: "#submit"

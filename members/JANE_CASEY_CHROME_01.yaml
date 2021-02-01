@@ -1,9 +1,11 @@
-bioguide: JANE_CASEY_Custom_01
+bioguide: JANE_CASEY_CHROME_01
 contact_form:
   method: post
-  action: ""
+  driver: chrome
   steps:
-    - visit: "http://ngpvan-contact-jane-casey.herokuapp.com/forms/JANE_CASEY_Custom_01"
+    - visit: "http://ngpvan-contact-jane-casey.herokuapp.com/forms/JANE_CASEY_JS_01"
+    - find:
+      - selector: "#prefix"
     - select:
       - name: prefix
         selector: "#prefix"
@@ -15,6 +17,10 @@ contact_form:
           - Ms.: Ms.
           - Miss: Miss
     - fill_in:
+      - name: bioid
+        selector: "#bioid"
+        value: "JANE_CASEY_CHROME_01"
+        required: true
       - name: lastname
         selector: "#lastname"
         value: $NAME_LAST
