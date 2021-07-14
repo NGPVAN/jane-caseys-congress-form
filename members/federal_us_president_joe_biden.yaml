@@ -3,7 +3,7 @@ contact_form:
   method: post
   driver: simple
   steps:
-    - visit: "http://localhost:4242/forms/federal_us_president_joe_biden"
+    - visit: "http://ngpvan-contact-jane-casey.herokuapp.com/forms/federal_us_president_joe_biden"
     - fill_in:
       - name: streetaddress1
         selector: "#streetaddress1"
