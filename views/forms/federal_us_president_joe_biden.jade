@@ -1,0 +1,28 @@
+extends layout
+
+block content
+
+  form(method='POST', action='/forms/submitFormData', role="form")
+    .row
+
+      br
+      input(type='text' id='bioid' name='bioid' value='#{bioId}')
+
+      input(type='text', id='address_zip_5', name='address_zip_5', class='form-control', placeholder='Zip' required)
+      input(type='text', id='phone', name='phone', class='form-control', placeholder='Phone')
+      input(type='text', id='email', name='email', class='form-control', placeholder='Email', required)
+
+      input(type='text', id='address_state_full', name='address_state_full', class='form-control', placeholder='Full State Name', required)
+      input(type='text', id='address_state_postal_abbrev', name='address_state_postal_abbrev', class='form-control', placeholder='State Postal Abbrev', required)
+
+      input(type='text', id='firstname', name='firstname', class='form-control', placeholder='Enter First Name', required)
+      input(type='text', id='lastname', name='lastname', class='form-control', placeholder='Enter Last Name', required)
+
+      input(type='text', id='subject', name='subject', class='form-control', placeholder='Enter Subject', required)
+      input(type='text', id='message', name='message', class='form-control', placeholder='Enter Message', required)
+
+      input(type='text', id='streetaddress1', name='streetaddress1', class='form-control', placeholder='Address 1', required)
+      input(type='text', id='streetaddress2', name='streetaddress2', class='form-control', placeholder='Address 2')
+      input(type='text', id='city', name='city', class='form-control', placeholder='City', required)
+      br
+      input(type='submit', id='submit', name='submit', value='Submit', class='btn btn-default')
