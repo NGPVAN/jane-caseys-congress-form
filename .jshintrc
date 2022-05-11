@@ -10,6 +10,6 @@
   "trailing"  : true,
   "freeze"    : true,
   "quotmark"  : "single",
-  "maxlen"    : 80,
+  "maxlen"    : 120,
   "boss"      : true
 }

@@ -33,4 +33,3 @@ postData.txt
 *.sw[a-z]
 
 bower_components
-package-lock.json
