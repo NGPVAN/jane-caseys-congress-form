@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.raw({
   // XML workaround
   type: function(req){
-    return req.headers['content-type'] && req.headers['content-type'].toLowerCase().includes('xml')
+    return req.headers['content-type'] && req.headers['content-type'].toLowerCase().includes('xml');
   }
 }));
 
