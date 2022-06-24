@@ -26,7 +26,10 @@ contact_form:
         selector: "#country"
         value: $ADDRESS_COUNTRY
         required: true
-        options: COUNTRIES        
+        options:
+          United States: United States
+          Canada: Canada
+          Mexico: Mexico
       - name: response
         selector: "#response"
         value: "yes"
