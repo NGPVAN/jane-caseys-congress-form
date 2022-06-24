@@ -44,6 +44,10 @@ contact_form:
         selector: "#city"
         value: $ADDRESS_CITY
         required: Yes
+      - name: country
+        selector: "#country"
+        value: $ADDRESS_COUNTRY
+        required: Yes        
       - name: zipcode
         selector: "#zipcode"
         value: $ADDRESS_ZIP5
