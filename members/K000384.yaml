@@ -22,6 +22,11 @@ contact_form:
         value: $ADDRESS_STATE_POSTAL_ABBREV
         required: Yes
         options: US_STATES
+      - name: country
+        selector: "#country"
+        value: $ADDRESS_COUNTRY
+        required: Yes
+        options: COUNTRIES        
       - name: response
         selector: "#response"
         value: "yes"
