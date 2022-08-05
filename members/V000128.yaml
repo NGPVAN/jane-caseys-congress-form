@@ -78,6 +78,10 @@ contact_form:
         selector: "#email"
         value: $EMAIL
         required: true
+      - name: phonenumber
+        selector: "#phonenumber"
+        value: $PHONE
+        required: Yes
     - click_on:
       - value: Submit
         selector: "#submit"
