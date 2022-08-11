@@ -12,15 +12,15 @@ block content
         option Ms.
       br
       br
-      script(src="http://www.google.com/recaptcha/api/challenge?k=#{publicKey}")
+      script(src="http://www.google.com/recaptcha/api/challenge?k=" + publicKey)
       noscript
-        iframe(src="http://www.google.com/recaptcha/api/noscript?k=#{publicKey}",
+        iframe(src="http://www.google.com/recaptcha/api/noscript?k=" + publicKey,
             height="300", width="500", frameborder="0")
       br
       textarea(name="recaptchachallenge", rows="3", cols="40")
       input(type="hidden", name="recaptcharesponse", value="manual_challenge")
       br
-      input(type='text' id='bioid' name='bioid' value='#{bioId}')
+      input(type='text' id='bioid' name='bioid' value=bioId)
       input(type='text', id='lastname', name='lastname', class='form-control', placeholder='Enter Last Name', required)
       br
       input(type='text', id='subject', name='subject', class='form-control', placeholder='Enter Subject', required)

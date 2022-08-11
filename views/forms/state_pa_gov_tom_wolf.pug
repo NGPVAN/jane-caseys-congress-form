@@ -5,7 +5,7 @@ block content
   form(method='POST', action='/forms/solveNewRecaptcha', role="form")
     .row
       noscript
-      div(data-sitekey='#{newPublicKey}', class='g-recaptcha')
+      div(data-sitekey=newPublicKey, class='g-recaptcha')
     input(type='text', id='email', name='email', class='form-control', placeholder='Email', required)
-    input(type='text', id='phonenumber', name='phonenumber', class='form-control', placeholder='Enter Phone', required)    
+    input(type='text', id='phonenumber', name='phonenumber', class='form-control', placeholder='Enter Phone', required)
     input(type='submit', id='recaptchaSubmit', name='recaptchaSubmit', value='Submit CAPTCHA')

@@ -3,7 +3,7 @@ block content
 
   form(method='POST', action='/forms/submitFormData', role="form")
     .row
-      input(type='text' id='bioid' name='bioid' value='#{bioId}')
+      input(type='text' id='bioid' name='bioid' value=bioId)
       br
       select(name="topic", required)#topic
         option(value='') Select One
@@ -56,4 +56,4 @@ block content
       input(type='text', id='email', name='email', class='form-control', placeholder='Email', required)
       input(type='text', id='city', name='city', class='form-control', placeholder='City', required)
       br
-      input(type='submit', id='submit', name='submit', value='Submit', class='btn btn-default')      
+      input(type='submit', id='submit', name='submit', value='Submit', class='btn btn-default')

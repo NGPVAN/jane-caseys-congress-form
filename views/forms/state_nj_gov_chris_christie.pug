@@ -4,10 +4,10 @@ block content
 
   form(method='POST', action='/forms/submitFormData', class='form-inline', role='form')
     .form-group
-      input(type='text' id='bioid' name='bioid' value='#{bioId}')
+      input(type='text' id='bioid' name='bioid' value=bioId)
       h4 Topic
       select(name="topic", required)#topic
-        option(value='') Select One	  
+        option(value='') Select One
         option Addiction Services
         option Agriculture
         option Arts and History
@@ -209,6 +209,6 @@ block content
         option --Teacher Certification
         option --Telephone/Water, Gas and Electric Rates
         option --Veterans Affairs
-        option --Welfare/Food Stamps	
+        option --Welfare/Food Stamps
       br
       input(type='submit', id='submit', name='submit', value='Submit', class='btn btn-default')
