@@ -33,10 +33,7 @@ contact_form:
       - name: email
         selector: "#email"
         value: $EMAIL
-        required: true
-    - click_on:
-      - value: Submit
-        selector: input#submit        
+        required: true     
   success:
     headers:
       status: 200
