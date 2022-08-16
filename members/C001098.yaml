@@ -34,6 +34,9 @@ contact_form:
         selector: "#email"
         value: $EMAIL
         required: true
+    - click_on:
+      - value: Submit
+        selector: input#submit        
   success:
     headers:
       status: 200
