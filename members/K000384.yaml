@@ -43,11 +43,7 @@ contact_form:
       - name: city
         selector: "#city"
         value: $ADDRESS_CITY
-        required: Yes
-      - name: country
-        selector: "#country"
-        value: $ADDRESS_COUNTRY
-        required: Yes        
+        required: Yes       
       - name: zipcode
         selector: "#zipcode"
         value: $ADDRESS_ZIP5

@@ -33,7 +33,7 @@ contact_form:
       - name: email
         selector: "#email"
         value: $EMAIL
-        required: true
+        required: true     
   success:
     headers:
       status: 200
