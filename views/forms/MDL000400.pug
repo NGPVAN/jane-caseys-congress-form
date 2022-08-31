@@ -1,0 +1,30 @@
+extends layout
+
+block content
+
+  form(method='POST', action='/forms/solveRecaptcha', role="form")
+    .row
+      h3 Prefix
+      select(name="prefix", required)#prefix
+        option(value='') Select One
+        option Mr.
+        option Mrs.
+        option Ms.
+      br
+      br
+      script(src="http://www.google.com/recaptcha/api/challenge?k=" + publicKey)
+      noscript
+        iframe(src="http://www.google.com/recaptcha/api/noscript?k=" + publicKey,
+            height="300", width="500", frameborder="0")
+      br
+      textarea(name="recaptchachallenge", rows="3", cols="40")
+      input(type="hidden", name="recaptcharesponse", value="manual_challenge")
+      br
+      input(type='text' id='bioid' name='bioid' value=bioId)
+      input(type='text', id='lastname', name='lastname', class='form-control', placeholder='Enter Last Name', required)
+      br
+      input(type='text', id='subject', name='subject', class='form-control', placeholder='Enter Subject', required)
+      input(type='text', id='message', name='message', class='form-control', placeholder='Enter Message', required)
+      input(type='text', id='email', name='email', class='form-control', placeholder='Email', required)
+      br
+      input(type='submit', id='submit', name='submit', value='Submit', class='btn btn-default')
