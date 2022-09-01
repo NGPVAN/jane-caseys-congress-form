@@ -31,7 +31,7 @@ Returns simple content with the specified status code and delay.
 - `msg`: Content to display on the page in the "Message" location
 
 ### GET `/testyaml/:yamlId`, `/testyaml/:status/:yamlId`, `/testYaml/:status/:delay/:yamlId`
-Returns the YAML content with specified status code and delay.
+Returns the YAML content with specified status code and delay. 
 If yaml doesn't exist, will respond with `Not Found` content.
 
 
@@ -49,7 +49,7 @@ Notes on Adding Forms
 
 ### Example usage of `?key={field}`
 #### Example 1: Using default `email` key
-```pug
+```jade
 extends layout
 
 block content
@@ -63,7 +63,7 @@ block content
       input(type='submit', id='submit', name='submit', value='Submit', class='btn btn-default')
 
 ```
-If `?key=` is not present in the form's `action`, then the `email` field will be used for the post data's key value. The above pug will use the default, email as its key.
+If `?key=` is not present in the form's `action`, then the `email` field will be used for the post data's key value. The above jade will use the default, email as its key.
 
 Suppose you filled out the above form with the following data:
 - `email`: `fake@email.com`
@@ -73,7 +73,7 @@ Suppose you filled out the above form with the following data:
 To only see the post data from this post, you visit: `/forms/postData?key=fake@email.com`
 
 #### Example 2: Using `phonenumber` (or anything else) key
-```pug
+```jade
 extends layout
 
 block content
@@ -140,7 +140,7 @@ Forms Available
 | 222 Liberty St.<br />Lowell, MA 01851 | MAL000362<br/>Rady Mom | MA Lower | One Step | firstname |
 | PO Box 991<br />Union, KY 41091 | KYL000025<br/>John Schickel | KY Senator | Anti-spam Hot or Cold Q&A | N/A |
 | 898 Malabar Rd SE<br />Palm Bay, FL 32907 | FLL000002<br/>Thad Altman | FL Senator | Anti-spam Math Q&A | N/A |
-| 2500 Harrisburg Pike Lot 17<br />Grove City, OH 43123 | OHL000003<br/>Kevin Bacon | OH Senator | Sanitized Address | streetaddress2 |
+| 2500 Harrisburg Pike Lot 17<br />Grove City, OH 43123 | OHL000003<br/>Kevin Bacon | OH Senator | Sanitized Address | streetaddress2 |   
 | 1011 George Wallace Blvd<br/>Tuscumbia, AL 35674 | A000055<br/>Robert Aderholt | US House | One Step | N/A |
 | 1011 George Wallace Blvd<br/>Tuscumbia, AL 35674 | S001141<br/>Jefferson Sessions  | US Senate | ReCaptchaV2 | N/A |
 | 1011 George Wallace Blvd<br/>Tuscumbia, AL 35674 | S000320<br/>Richard Shelby | US Senate | ReCaptchaV2 | N/A |

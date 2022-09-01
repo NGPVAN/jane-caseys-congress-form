@@ -1,0 +1,9 @@
+extends layout
+block content
+    form(method='POST', action='/forms/twoStepTest', class='form-inline', role='form')
+        .form-group
+            input(type='text' id='bioid' name='bioid' value='#{bioId}')
+            input(type='text', id='zipcode', name='zipcode', class='form-control', placeholder='Enter Zip 5', required)
+            input(type='text', id='required-zip4', name='zipcode4', class='form-control', placeholder='Enter Zip 4', required)
+            br
+            input(type='submit', id='goToNextStep', name="goToNextStep", value='Go To Next Step', class='btn btn-default')

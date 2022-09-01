@@ -1,0 +1,16 @@
+extends layout
+
+block content
+
+  form(method='POST', action='/forms/solveRecaptcha', role="form")
+    .row
+      script(src="http://www.google.com/recaptcha/api/challenge?k=#{publicKey}")
+      noscript
+         iframe(src="http://www.google.com/recaptcha/api/noscript?k=#{publicKey}",
+             height="300", width="500", frameborder="0")
+         br
+         textarea(name="recaptchachallenge", rows="3", cols="40")
+         input(type="hidden", name="recaptcharesponse", value="manual_challenge")
+      input(type='text' id='bioid' name='bioid' value='#{bioId}')
+        input(type='text', id='email', name='email', class='form-control', placeholder='Email', required)
+        input(type='submit', id='submitcaptcha', name='submitcaptcha', value='Check Recaptcha', class='btn btn-default')

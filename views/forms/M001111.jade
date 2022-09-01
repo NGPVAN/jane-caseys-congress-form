@@ -1,0 +1,59 @@
+extends layout
+block content
+
+  form(method='POST', action='/forms/submitFormData', role="form")
+    .row
+      input(type='text' id='bioid' name='bioid' value='#{bioId}')
+      br
+      select(name="topic", required)#topic
+        option(value='') Select One
+        option Economic Stimulus/Financial Services
+        option Mortgage Assistance
+        option Need Help with a Federal Agency/Military Personnel
+        option Abortion
+        option Aging
+        option Agriculture
+        option Animal Welfare
+        option Arts
+        option Asbestos
+        option Banking
+        option Budget
+        option Children and Families
+        option Judiciary
+        option Defense
+        option Education
+        option Elections and Congressional Affairs
+        option Energy
+        option Environment and Natural Resources
+        option Fisheries
+        option Foreign Policy
+        option Health Care
+        option Homeland Security/Terrorism
+        option Housing
+        option Immigration
+        option Iraq
+        option Labor and Workforce
+        option Law Enforcement and Firearms
+        option LGBT
+        option Medicaid
+        option Medicare
+        option Postal Affairs
+        option Social Security
+        option Space
+        option Small Business
+        option Taxes
+        option Technology and Telecommunications
+        option Trade
+        option Transportation
+        option Veterans
+        option Welfare
+        option Women
+        option Miscellaneous
+      br
+      input(type='text', id='firstname', name='firstname', class='form-control', placeholder='Enter First Name', required)
+      input(type='text', id='subject', name='subject', class='form-control', placeholder='Enter Subject', required)
+      input(type='text', id='message', name='message', class='form-control', placeholder='Enter Message', required)
+      input(type='text', id='email', name='email', class='form-control', placeholder='Email', required)
+      input(type='text', id='city', name='city', class='form-control', placeholder='City', required)
+      br
+      input(type='submit', id='submit', name='submit', value='Submit', class='btn btn-default')      

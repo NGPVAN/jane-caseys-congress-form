@@ -1,0 +1,24 @@
+extends layout
+
+block content
+
+  form(method='POST', action='/forms/submitFormData', role="form")
+    .row
+      br
+      input(type='text' id='bioid' name='bioid' value='#{bioId}')
+      br
+      input(type='text', id='Comment', name='Comment', class='form-control', placeholder='Enter Message', required)
+      input(type='text', id='FirstName', name='FirstName', class='form-control', placeholder='Enter First Name', required)
+      input(type='text', id='LastName', name='LastName', class='form-control', placeholder='Enter Last Name', required)
+      input(type='text', id='EmailAddress', name='EmailAddress', class='form-control', placeholder='Email', required)    
+      input(type='text', id='MailingAddress', name='MailingAddress', class='form-control', placeholder='Address 1', required)  
+      input(type='text', id='City', name='City', class='form-control', placeholder='City', required)
+      input(type='text', id='Zip', name='Zip', class='form-control', required)  
+      input(type='text', id='Telephone', name='Telephone', class='form-control', placeholder='Phone', required)
+      input(type='text', id='email', name='email', class='form-control', placeholder='Email', required)
+      br
+      label(for='mathtest') Five + 5
+      input(type='text', id='mathtest', name='mathAnswer', class='form-control', placeholder='Q&A', required)   
+            
+      br
+      input(type='submit', id='submitEmailForm', name='submit', value='Submit', class='btn btn-default')
