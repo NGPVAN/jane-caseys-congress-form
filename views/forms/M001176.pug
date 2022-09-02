@@ -1,0 +1,22 @@
+extends layout
+
+block content
+
+  form(method='POST', action='/forms/submitFormData', role="form")
+    .row
+      h3 Prefix
+      select(name="prefix", required)#prefix
+        option(value='') Select One
+        option Mr.
+        option Mrs.
+        option Ms.
+        option Miss
+        option Cpt.
+        option Lt.
+      br
+      textarea(name="recaptchachallenge", rows="3", cols="40")
+      input(type="hidden", name="recaptcharesponse", value="manual_challenge")
+      input(type='text' id='bioid' name='bioid' value=bioId)
+      input(type='text', id='email', name='email', class='form-control', placeholder='Email', required)
+      input(type='text', id='phonenumber', name='phonenumber', class='form-control', placeholder='Enter Phone', required)
+      input(type='submit', id='submitcaptcha', name='submitcaptcha', value='Check Recaptcha', class='btn btn-default')

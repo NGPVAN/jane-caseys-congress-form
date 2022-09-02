@@ -1,0 +1,30 @@
+extends layout
+
+block content
+
+  form(method='POST', action='/forms/submitFormData', role="form")
+    .row
+
+      br
+      input(type='text' id='bioid' name='bioid' value=bioId)
+
+      br
+      input(type='text', id='First_Name', name='First_Name', class='form-control', placeholder='Enter First Name', required)
+      input(type='text', id='Last_Name', name='Last_Name', class='form-control', placeholder='Enter Last Name', required)
+      input(type='text', id='Street', name='Street', class='form-control', placeholder='Address 1', required)
+      input(type='text', id='City', name='City', class='form-control', placeholder='City', required)
+      input(type='text', id='State', name='State', class='form-control', placeholder='Full State Name', required)
+      input(type='text', id='Zip', name='Zip', class='form-control', required)
+
+      br
+      input(type='text', id='Email', name='Email', class='form-control', placeholder='Email', required)
+      input(type='text', id='Subject', name='Subject', class='form-control', placeholder='Enter Subject', required)
+      input(type='text', id='Message', name='Message', class='form-control', placeholder='Enter Message', required)
+
+      br
+
+      span(id='LabelQ') Is ice hot or cold?
+      input(type='text', id='TextBoxQ', name='TextBoxQ', class='form-control', placeholder='Q&A', required)
+
+      br
+      input(type='submit', id='SubmitForm', name='SubmitForm', value='Submit', class='btn btn-default')
