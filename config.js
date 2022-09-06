@@ -5,7 +5,7 @@ module.exports = {
     url: process.env.POSTGRES_DB_URL,
     username: process.env.POSTGRES_USERNAME || '',
     password: process.env.POSTGRES_PASSWORD || '',
-    server: process.env.POSTGRES_SERVER ||'localhost/postgres'
+    server: process.env.POSTGRES_SERVER ||'localhost'
   },
 
   captcha:
