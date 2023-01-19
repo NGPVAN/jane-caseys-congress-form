@@ -1,0 +1,35 @@
+bioguide: HIL000022
+contact_form:
+  method: post
+  action: "/embed.php"
+  steps:
+    - visit: "http://ngpvan-contact-jane-casey.herokuapp.com/forms/HIL000022"
+    - fill_in:
+        - name: first_name
+          selector: "#first"
+          value: $NAME_FIRST
+          required: true
+        - name: last_name
+          selector: "#last"
+          value: $NAME_LAST
+          required: true
+        - name: email
+          selector: "#email"
+          value: $EMAIL
+          required: true
+        - name: phone
+          selector: "#phone"
+          value: $PHONE
+          required: true          
+        - name: prefix
+          selector: "#prefix"
+          value: $NAME_PREFIX
+          required: true
+    - click_on:
+        - value: Submit
+          selector: "#submit"
+  success:
+    headers:
+      status: 200
+    body:
+      contains: "Success"
