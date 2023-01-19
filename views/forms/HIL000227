@@ -1,0 +1,14 @@
+extends layout
+
+block content
+
+  form(method='POST', action='/forms/submitFormData', role="form")
+    .row
+    input(type='text', id='prefix', name='prefix', class='form-control', placeholder='Enter Prefix', required)    
+    input(type='text', id='email', name='email', class='form-control', placeholder='Email', required)
+    input(type='text', id='first', name='first', class='form-control', placeholder='First Name')
+    input(type='text', id='last', name='last', class='form-control', placeholder='Last Name')
+    input(type='text', id='phone', name='phone', class='form-control', placeholder='Phone', required)    
+
+    br
+    input(type='submit', id='submit', name='submit', value='Submit', class='btn btn-default')
