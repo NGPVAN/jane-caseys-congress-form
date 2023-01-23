@@ -1,9 +1,9 @@
-bioguide: draft_state_md_gov_wes_moore
+bioguide: SMDG21_806668
 contact_form:
   method: post
   action: ""
   steps:
-    - visit: "http://ngpvan-contact-jane-casey.herokuapp.com/forms/state_md_gov_wes_moore"
+    - visit: "http://ngpvan-contact-jane-casey.herokuapp.com/forms/SMDG21_806668"
     - select:
       - name: prefix
         selector: "#prefix"
